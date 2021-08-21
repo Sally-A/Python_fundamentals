@@ -9,7 +9,11 @@ def deposit(balance):
 
 def withdraw(balance):
     amount = input("Enter amount to withdraw: $")
-    return balance - float(amount)
+    if float(amount) > balance:
+        print("Not enough funds in account")
+        return balance
+    else:
+        return balance - float(amount)
 
 
 def logout(name):

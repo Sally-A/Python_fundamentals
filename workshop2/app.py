@@ -13,12 +13,27 @@ def atm_menu(name):
     print("------------------------------------------")
 
 
-print("          === Automated Teller Machine ===          ")
-user = input("Enter name to register: ")
-pin = input("Enter PIN: ")
 balance = 0.0
+print("          === Automated Teller Machine ===          ")
+while True:
+    user = input("Enter name to register: ")
+    if len(user) < 1 or len(user) > 10:
+        print("Name must be between 1 and 10, please try again")
+        continue
+    else:
+        break
+while True:
+    pin = input("Enter PIN: ")
+    if len(pin) != 4:
+        print("PIN must be 4 digits, please try again")
+        continue
+    else:
+        break
 
+print()
 print(user, "has been registered with a starting balance of $" + str(balance))
+print()
+
 
 while True:
     print("          === Automated Teller Machine ===          ")
@@ -34,6 +49,7 @@ while True:
 while True:
     atm_menu(user)
     option = input("Choose an option: ")
+    print()
     if option == "1":
         account.show_balance(balance)
     elif option == "2":
