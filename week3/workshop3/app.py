@@ -1,5 +1,4 @@
 from donations_pkg.homepage import *
-# from donations_pkg.homepage imp
 from donations_pkg.user import login
 from donations_pkg.user import register
 from donations_pkg.user import donate
