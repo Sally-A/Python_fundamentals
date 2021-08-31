@@ -25,6 +25,7 @@ def register(database, username):
 def donate(username):
     donation = ""
     donation_amt = float(input("Enter the amoount to donate: "))
-    donation = (username + " donated $" + str(donation_amt))
+    #donation = (username + " donated $" + str(donation_amt))
+    donation = (username + " donated ${:.2f}".format(donation_amt))
     print("Thank you for your donation!")
     return donation
