@@ -35,8 +35,10 @@ class BankUser(User):
         if pin_entered == self.pin:
             print("Transfer authorized")
             print("Transferring $", amount, "to", to_account.name)
-            to_account.balance += amount
-            self.balance -= amount
+            #to_account.balance += amount
+            to_account.deposit(amount)
+            #self.balance -= amount
+            self.withdraw(amount)
             return True
         else:
             print("Invalid PIN.  Transaction canceled.")
